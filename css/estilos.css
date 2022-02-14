@@ -196,6 +196,135 @@
    height: 100%;
  }
  }
+
+/* media query para moviles*/
+
+@media only screen and (min-width: 350px) and (max-width: 550px){
+    .container {  display: grid;
+      grid-template-columns: 2fr;
+      grid-template-rows: 200px 600px 250px 400px 150px 300px;
+      gap: 10px 10px;
+      grid-auto-flow: row;
+      grid-template-areas:
+     "header"
+     "hero"
+     "energia"
+     "imagen-1"
+     "texto-1"
+     "imagen-2"
+     "texto-2"
+     "footer";
+   width: 100%;
+   height: 100%;
+    }
+    .header { grid-area: header; }
+    
+    .hero { grid-area: hero; }
+    
+    .imagen-1 { grid-area: imagen-1; }
+    
+    .imagen-2 { grid-area: imagen-2; }
+    
+    .footer { grid-area: footer; }
+    
+    .energia { grid-area: energia; }
+    
+    .texto-1 { grid-area: texto-1; }
+    
+    .texto-2 { grid-area: texto-2; }
+    
+    .header { grid-area: header;
+    background-color: rgb(232, 240, 221);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: sticky;
+    top: 0;
+    left: 0;
+    }
+    .hero { grid-area: hero; 
+    background-image: url(https://blog.structuralia.com/hubfs/Imported_Blog_Media/pe1-5.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    }
+    .energia{grid-area: energia;}
+    .imagen-1 { 
+    grid-area: imagen-1; 
+    background-image: url(https://images.unsplash.com/photo-1498084393753-b411b2d26b34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGVuZXJneXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 90%;
+    margin-right: 30px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    }
+    body{
+        background-color: rgb(2, 2, 49);
+    }
+    .imagen-2 { grid-area: imagen-2; 
+    background-image: url(https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 90%;
+    margin-right: 40px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    }
+    .texto-1 {
+        grid-area: texto-1;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: star;
+        line-height: 30px;
+        width: 80%;
+        margin-right: 40px;
+        margin-left: 40px;
+        border-left: 4px solid aqua;
+        padding-left: 20px;
+        margin-bottom: 40px;
+        background-color: rgb(2, 2, 49);
+    }
+    .texto-2 { 
+        grid-area: texto-2;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: star;
+        line-height: 30px;
+        width: 70%;
+        margin-right: 40px;
+        margin-left: 40px;
+        border-left: 4px solid aqua;
+        padding-left: 20px;
+        margin-bottom: 40px;
+    }
+    .footer { 
+        grid-area: footer; 
+        background-color: rgb(232, 240, 221); 
+    }
+    .footer__redes{
+        display: fex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
  /* css pagina galeria*/
 
 
