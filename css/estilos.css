@@ -33,13 +33,13 @@
  }
  button{
      background-color: darkcyan;
-     padding: 10px 15px;
+     padding: 15px 15px;
      border-radius: 5px;
  }
  button:hover{
      background-color: rgb(51, 245, 26);
  }
- img{
+  img{
      padding-left: 100px;
  }
  .matelca{
@@ -47,11 +47,23 @@
      padding-bottom: 20px;
      padding-left: 50px;
  }
+ .matelca:hover
+ {
+     animation: 1.5s giro 1;
+     backface-visibility: visible;
+ }
+ 
+ @keyframes giro
+ {
+     0% { opacity: 0.5; transform: perspective(200px) rotateX(90deg);  }
+     40% { transform: perspective(200px) rotateX(-20deg); }
+     70% { transform: perspective(200px) rotateX(20deg); }
+ }
  .energia{
      color: white;
      text-align: justify;
-     background-color: rgb(2, 2, 49);
-     font-size: 16px;
+    background-color: rgb(2, 2, 49);
+     font-size: 18px;
      line-height: 30px;
      width: 50%;
      height: 150px;
@@ -61,6 +73,22 @@
      border-left: 6px solid aqua;
     padding-left: 20px;
     }
+.energia{
+    animation-name: energia;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes energia{
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(200px);
+    }
+}
+
  .container {  display: grid;
     grid-template-areas:
      "header header"
@@ -82,6 +110,7 @@
  .header { grid-area: header; }
  
  .hero { grid-area: hero; }
+ .hero
  
  .imagen-1 { grid-area: imagen-1; }
  
@@ -101,7 +130,7 @@
  flex-direction: row;
  justify-content: space-between;
  align-items: flex-end;
- position: sticky;
+ /*position: sticky;*/
  top: 0;
  left: 0;
  }
@@ -129,8 +158,12 @@
  margin-left: 40px;
  margin-bottom: 20px;
  }
+ 
  body{
      background-color: rgb(2, 2, 49);
+ }
+ body{
+    background-image: radial-gradient(red, orange, yellow, green, blue);
  }
  .imagen-2 { grid-area: imagen-2; 
  background-image: url(https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80);
@@ -141,6 +174,18 @@
  margin-right: 40px;
  margin-left: 20px;
  margin-bottom: 20px;
+ }
+ .imagen-2:hover
+ {
+     animation: 1.5s giro 1;
+     backface-visibility: visible;
+ }
+ 
+ @keyframes giro
+ {
+     0% { opacity: 0.5; transform: perspective(200px) rotateX(90deg);  }
+     40% { transform: perspective(200px) rotateX(-20deg); }
+     70% { transform: perspective(200px) rotateX(20deg); }
  }
  .texto-1 {
      grid-area: texto-1;
@@ -153,10 +198,22 @@
      width: 80%;
      margin-right: 40px;
      margin-left: 40px;
-     border-left: 4px solid aqua;
+     border-left: 6px solid aqua;
      padding-left: 20px;
      margin-bottom: 40px;
      background-color: rgb(2, 2, 49);
+ }
+ .texto-1:hover
+ {
+     animation: 1s vibrar infinite;
+ }
+ 
+ @keyframes vibrar
+ {
+     5%, 25%, 45%, 65%, 85% { transform: translateX(-10px); }
+     15%, 35%, 55%, 75%, 95% { transform: translateX(10px); }
+ }
+ 
  }
  .texto-2 { 
      grid-area: texto-2;
@@ -169,10 +226,25 @@
      width: 70%;
      margin-right: 40px;
      margin-left: 40px;
-     border-left: 4px solid aqua;
+     border-left: 6px solid aqua;
      padding-left: 20px;
      margin-bottom: 40px;
+     background-color: rgb(2, 2, 49);
  }
+
+.texto-2:hover { animation: 1s flash 1; }
+
+@keyframes flash
+{
+	50% { opacity: 1; }
+	25%, 75% { opacity: 0; }
+}
+.vibrar:hover
+{
+	animation: 1s vibrar infinite;
+}
+
+
  .footer { 
      grid-area: footer; 
      background-color: rgb(232, 240, 221); 
@@ -185,7 +257,7 @@
      padding-top: 20px;
      padding-bottom: 20px;
  }
- }
+ 
  @media only screen and (min-width: 550px) and (max-width: 950px){
      .container {  display: grid;
    grid-template-columns: 1fr 1fr;
@@ -202,7 +274,7 @@
 @media only screen and (min-width: 350px) and (max-width: 550px){
     .container {  display: grid;
       grid-template-columns: 2fr;
-      grid-template-rows: 200px 600px 250px 400px 150px 300px;
+      grid-template-rows: 200px 600px 250px 400px 150px 300px 150px 300px;
       gap: 10px 10px;
       grid-auto-flow: row;
       grid-template-areas:
@@ -256,6 +328,12 @@
     height: 100%;
     }
     .energia{grid-area: energia;}
+    .energia{
+        animation-name: energia;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
     .imagen-1 { 
     grid-area: imagen-1; 
     background-image: url(https://images.unsplash.com/photo-1498084393753-b411b2d26b34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGVuZXJneXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
@@ -296,6 +374,16 @@
         margin-bottom: 40px;
         background-color: rgb(2, 2, 49);
     }
+    .texto-1:hover
+ {
+     animation: 1s vibrar infinite;
+ }
+ 
+ @keyframes vibrar
+ {
+     5%, 25%, 45%, 65%, 85% { transform: translateX(-10px); }
+     15%, 35%, 55%, 75%, 95% { transform: translateX(10px); }
+ }
     .texto-2 { 
         grid-area: texto-2;
         color: white;
@@ -388,6 +476,18 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.item5:hover
+{
+	animation: 1.5s giro 1;
+	backface-visibility: visible;
+}
+
+@keyframes giro
+{
+	0% { opacity: 0.5; transform: perspective(200px) rotateX(90deg);  }
+	40% { transform: perspective(200px) rotateX(-20deg); }
+	70% { transform: perspective(200px) rotateX(20deg); }
 }
 .item6{
     background-color: dimgray;
